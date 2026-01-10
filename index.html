@@ -33,6 +33,8 @@
     <link rel="stylesheet" href="plugin/owlcarousel/css/owl.theme.default.min.css" type="text/css">
     <!-- Countdown-->
     <link rel="stylesheet" href="plugin/countdown/css/jquery.countdown.css" type="text/css">
+    <!-- lightbox -->
+    <link rel="stylesheet" href="plugin/lightbox/css/lightbox.css" type="text/css">
     <!-- magnific-popup -->
     <link rel="stylesheet" href="plugin/magnific-popup/css/magnific-popup.css" type="text/css">
     <!-- Custom -->
@@ -55,6 +57,8 @@
     <script src="plugin/masonry/imagesloaded.pkgd.min.js"></script>
     <!-- magnific-popup -->
     <script src="plugin/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+    <!-- lightbox -->
+    <script src="plugin/lightbox/js/lightbox.min.js"></script>
     <!-- kakao map -->
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=41a0faa219c1644f6d89dd5f4f49439e"></script>
     <!-- kakao -->
@@ -266,6 +270,9 @@
         <div id="grid-container" class="grid">
             <span id="gallery-html"></span>
         </div>
+        <div id="grid-container2">
+            <span id="gallery-html2"></span>
+        </div>
         <div id="more-photo" class="contact-btn mt-3">
             <a class="contact-a" onclick="morePhoto()">
                 <span><i class="fa fa-angle-double-down mr-5"></i> 사진 더보기</span>
@@ -295,42 +302,32 @@
         <div id="map" style="height: 350px;"></div>
         <div class="map-navi">
             <div class="navi">
-                <a href="nmap://search?query=광주 JS웨딩컨벤션&appname=https://kindsunny.github.io">
+                <a href="nmap://search?query=JS웨딩컨벤션&appname=https://kindsunny.github.io">
                     <img src="./img/icon/icon_navermap.png"> <span>네이버지도</span>
                 </a>
             </div>
             <div class="navi">
-                <a href="tmap://search?name=광주 JS웨딩컨벤션">
+                <a href="tmap://search?name=JS웨딩컨벤션">
                     <img src="./img/icon/icon_tmap.png"> <span>티맵</span>
                 </a>
             </div>
             <div class="navi">
-                <a href="https://map.kakao.com/link/to/161425946">
+                <a href="https://map.kakao.com/link/to/21695197">
                     <img src="./img/icon/icon_kakaonavi.png"> <span>카카오맵</span>
                 </a>
             </div>
 
         </div>
     </div>
-    <div class="wow animate__animated animate__fadeInUp mb-2">
+    <div class="wow animate__animated animate__fadeInUp mb-2 d-none">
         <div class="contact-btn">
             <a id="map-popup" class="contact-a" href="#maps-popup">
                 <span><i class="fa fa-map-o mr-5"></i> 약도 이미지 보기</span>
             </a>
         </div>
     </div>
-    <div class="wow animate__animated animate__fadeInUp">
-        <div class="contact-btn">
-            <a id="roadview-popup" class="contact-a" href="#roadviews-popup">
-                <span><i class="fa fa-map-signs mr-5"></i> 주차장 로드뷰 보기</span>
-            </a>
-        </div>
-    </div>
     <!--        약도 팝업-->
     <div id="maps-popup" class="white-popup text-center mfp-hide">
-    </div>
-    <!--        로드뷰 팝업-->
-    <div id="roadviews-popup" class="white-popup text-center mfp-hide">
     </div>
 
 <!--    오는법-->
@@ -346,39 +343,31 @@
                     <div class="accordion-body guide">
                         <span>※ 전용 3층 주차장 이용</span>
                         <span>※ 웨딩홀 바로 앞 주차가능</span>
-                        <span class="way-title">[북문 주차타워]</span>
-                        · 아울렛 후문 방향 직진 → 맞은편 루이비스 위치
-                        <span class="way-title">[남문 & 북문 지하 주차장]</span>
-                        · N9 구역 호텔&컨벤션 입구 엘리베이터 이용 → 1층 루이비스 위치
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingTwo">
                     <button class="accordion-button collapsed gift-btn text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <i class="fa fa-car i-width"></i> 자가용
+                        <i class="fa fa-bus i-width"></i> 버스
                     </button>
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionMap">
                     <div class="accordion-body guide">
-                        <span class="way-title">[서울]</span> · 삼일대로→경부고속도로→회덕IC분기점(당진,세종,전주방면 오른쪽)→북대전IC<br>
-                        · 삼일대로→경부고속도로→신탄진IC
-                        <span class="way-title">[대구]</span> · 신천대로→경부고속도로→회덕IC분기점(당진,세종,전주방면 오른쪽)→북대전IC
-                        <span class="way-title">[부산]</span> · 중앙고속도로→경부고속도로→회덕IC분기점(당진,세종,전주방면 오른쪽)→북대전IC
-                        <span class="way-title">[광주]</span> · 호남고속도로→북대전IC
+                        <span class="way-title">[상무시민공원]</span> · 상무63, 518, 지원25
+                        <span class="way-title">[보훈회관]</span> · 지원45, 지원25
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed gift-btn text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        <i class="fa fa-bus i-width"></i> 대중교통
+                        <i class="fa fa-subway i-width"></i> 지하철
                     </button>
                 </h2>
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionMap">
                     <div class="accordion-body guide">
-                        <span class="way-title">[상무시민공원]</span> · 상무63, 518, 지원25
-                        <span class="way-title">[보훈회관]</span> · 지원45, 지원25
+                        <span class="way-title">[김대중컨벤션센터]</span> · 4·5번출구 도보 7분
                     </div>
                 </div>
             </div>
@@ -477,12 +466,6 @@
                                     </div>
                                     <div class="btn-action kakaopay mb-1">
                                         <a class="a-btn" href="https://link.kakaopay.com/_/Vq7ymhM"><img class="kakao-btn" src="./img/icon/icon_kakaopay.png"></a>
-                                    </div>
-                                    <div class="btn-action mb-1 d-none">
-                                        <a class="a-btn" href="https://MySol.ID/신부장세희">신한</a>
-                                    </div>
-                                    <div class="btn-action d-none">
-                                        <a class="a-btn" href="https://toss.me/신부장세희">토스</a>
                                     </div>
                                 </div>
                             </div>
