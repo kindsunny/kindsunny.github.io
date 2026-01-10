@@ -56,7 +56,7 @@ window.basic = {
     "location": {
         "name": "JS웨딩컨벤션",
         "address": "광주광역시 서구 상무자유로 27-1",
-        "x": "36.4246584",
+        "x": "35.15353705",
         "y": "127.3979372"
     },
     "link": "https://kindsunny.github.io/",
@@ -69,16 +69,16 @@ window.basic = {
         "description":"2026.05.23.(토) 오후 3:00 JS웨딩컨벤션 단독홀",
         "greeting": "김병선과 정다정이 만나 결혼을 합니다.\n병선이는 키도 크고 잘 생기고 성격도 착하고\n선견지명도 뛰어나 다정이를 선택했습니다.\n정말 탁월한 선택이죠\n다정이도 키가 크고 예쁘죠\n정말이지, 두 사람의 아이는 190",
         "wedding_date": "2026.05.23 토요일 오후 3:00",
-        "wedding_location": "광주 JS웨딩컨벤션홀 단독홀",
-        "wedding_address": "광주광역시 서구 상무자유로 27-1<br>JS웨딩컨벤션"
+        "wedding_location": "JS웨딩컨벤션 단독홀",
+        "wedding_address": "광주광역시 서구 상무자유로 27-1(치평동 886-2)<br>JS웨딩컨벤션"
     }
 }
 let scrollTop;
-const holidays = [16,17,18];
-const numOfImages = 46;
+const holidays = [5,25];
+const numOfImages = 25;
 const basicNumbers = 9;
-const excludeNumbers = [22,31,46];
-const excludeNumbers2 = [2,];
+const excludeNumbers = [];
+const excludeNumbers2 = [];
 
 $(document).ready(function (){
 
@@ -97,6 +97,10 @@ $(document).ready(function (){
             open: function () {
                 $('body').css("overflow", "hidden");
                 $('body').css("touch-action", "none");
+                // ✅ iOS 제스처 줌 방지
+                  document.addEventListener('gesturestart', preventGesture, { passive: false });
+                  document.addEventListener('gesturechange', preventGesture, { passive: false });
+                  document.addEventListener('gestureend', preventGesture, { passive: false });
             },
             close: function() {
                 $('body').css("overflow", "");
@@ -105,7 +109,9 @@ $(document).ready(function (){
         }
     });
 
-    setGallery('gallery-html');
+    //setGallery('gallery-html');
+
+    setGallery('gallery-html2');
 
     // let msnry = $('#grid-container').masonry({
     //     itemSelector: '.grid-item',
@@ -118,51 +124,52 @@ $(document).ready(function (){
     //     $('#grid-container').masonry('layout');
     // });
 
-    $('.grid-item').magnificPopup({
-        fixedContentPos: true,
-        delegate: 'img',
-        type:'image',
-        gallery: {
-            enabled: true,
-            tCounter: '%curr% / %total%'
-        },
-        callbacks: {
-            beforeOpen: function () {
-                $('body').css("overflow", "hidden");
-                $('body').css("touch-action", "none");
-            },
-            open: function () {
-                $('body').css("overflow", "hidden");
-                $('body').css("touch-action", "none");
-                //$('figure>img').parent().bind('contextmenu', function(e){ return false; });
-            },
-            // imageLoadComplete: function () {
-            //     $('body').css("overflow", "hidden");
-            //     $('body').css("touch-action", "none");
-            // },
-            close: function() {
-                $('body').css("overflow", "");
-                $('body').css("touch-action", "pan-y");
-            },
-            elementParse: function(qw) {
-                qw.src = qw.el.attr('src');
-            }
-        }
-    });
+    lightbox.option({
+        'disableScrolling': true,
+        'resizeDuration': 1,
+        'fadeDuration': 1,
+        'fadeDuration': 1,
+        'wrapAround': true,
+        'alwaysShowNavOnTouchDevices' : true,
+        'albumLabel':'%1 / %2',
+    })
+
+    // $('.grid-item').magnificPopup({
+    //     fixedContentPos: true,
+    //     delegate: 'img',
+    //     type:'image',
+    //     gallery: {
+    //         enabled: true,
+    //         tCounter: '%curr% / %total%'
+    //     },
+    //     callbacks: {
+    //         beforeOpen: function () {
+    //             $('body').css("overflow", "hidden");
+    //             $('body').css("touch-action", "none");
+    //         },
+    //         open: function () {
+    //             $('body').css("overflow", "hidden");
+    //             $('body').css("touch-action", "none");
+    //             //$('figure>img').parent().bind('contextmenu', function(e){ return false; });
+    //         },
+    //         // imageLoadComplete: function () {
+    //         //     $('body').css("overflow", "hidden");
+    //         //     $('body').css("touch-action", "none");
+    //         // },
+    //         close: function() {
+    //             $('body').css("overflow", "");
+    //             $('body').css("touch-action", "pan-y");
+    //         },
+    //         elementParse: function(qw) {
+    //             qw.src = qw.el.attr('src');
+    //         }
+    //     }
+    // });
 
     $('#map-popup').magnificPopup({
         items: [
             {
-                src: './img/map/map3.jpg'
-            },
-            {
-                src: './img/map/map4.jpg'
-            },
-            {
-                src: './img/map/map1.jpg'
-            },
-            {
-                src: './img/map/map2.jpg'
+             //   src: './img/map/map.jpg'
             }
         ],
         gallery: {
@@ -186,45 +193,6 @@ $(document).ready(function (){
         }
     });
 
-    $('#roadview-popup').magnificPopup({
-        items: [
-            {
-                src: './img/roadview/roadview1.jpg',
-                title: '컨벤션&호텔입구편'
-            },
-            {
-                src: './img/roadview/roadview2-1.jpg',
-                title: '남문편1'
-            },
-            {
-                src: './img/roadview/roadview2-2.jpg',
-                title: '남문편2'
-            },
-            {
-                src: './img/roadview/roadview3.jpg',
-                title: '북문편'
-            }
-        ],
-        gallery: {
-            enabled: true,
-            tCounter: '%curr% / %total%'
-        },
-        type: 'image',
-        callbacks: {
-            beforeOpen: function () {
-                $('body').css("overflow", "hidden");
-                $('body').css("touch-action", "none");
-            },
-            open: function () {
-                $('body').css("overflow", "hidden");
-                $('body').css("touch-action", "none");
-            },
-            close: function() {
-                $('body').css("overflow", "");
-                $('body').css("touch-action", "pan-y");
-            },
-        }
-    });
 
     drawCalendar(window.basic.date);
     loadCountdown(window.basic.date,window.basic.honeymoon);
@@ -423,7 +391,7 @@ function getKakaoMap(location){
     marker.setPosition(xy);
 }
 function morePhoto(){
-    $('#grid-container .hidden-photo').removeClass('visually-hidden');
+    $('#grid-container2 .hidden-photo').removeClass('visually-hidden');
 
     $('#more-photo').addClass('visually-hidden');
     $('#hide-photo').removeClass('visually-hidden');
@@ -433,7 +401,7 @@ function morePhoto(){
     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 }
 function hidePhoto(){
-    $('#grid-container .hidden-photo').addClass('visually-hidden');
+    $('#grid-container2 .hidden-photo').addClass('visually-hidden');
     // imagesLoaded( '#grid-container' ).on( 'progress', function() {
     //     $('#grid-container').masonry('layout');
     // });
@@ -457,21 +425,46 @@ function setGallery(id){
     // }
 
     let cnt = 0;
+    // randomImageNumbers.forEach(function(imageNumber) {
+
+    //     if(excludeNumbers.includes(imageNumber)||excludeNumbers2.includes(imageNumber)){
+    //         return;
+    //     }
+    //     let divElement = document.createElement('div');
+    //     cnt++;
+    //     if(cnt <= basicNumbers){
+    //         divElement.className = 'grid-item';
+    //     }else{
+    //         divElement.className = 'grid-item hidden-photo visually-hidden';
+    //     }
+
+    //     let imgElement = document.createElement('img');
+    //     imgElement.src = './img/gallery/' + imageNumber + '.jpg';
+
+    //     divElement.appendChild(imgElement);
+
+    //     parentElement.appendChild(divElement);
+    // });
     randomImageNumbers.forEach(function(imageNumber) {
 
         if(excludeNumbers.includes(imageNumber)||excludeNumbers2.includes(imageNumber)){
             return;
         }
-        let divElement = document.createElement('div');
+        let divElement = document.createElement('a');
         cnt++;
         if(cnt <= basicNumbers){
-            divElement.className = 'grid-item';
+            divElement.className = 'grid-item example-image-link';
         }else{
-            divElement.className = 'grid-item hidden-photo visually-hidden';
+            divElement.className = 'grid-item example-image-link hidden-photo visually-hidden';
         }
 
+        divElement.setAttribute('href', './img/gallery/' + imageNumber + '.jpeg');
+        divElement.setAttribute('data-lightbox', 'example-set');
+        divElement.setAttribute('data-title', '');
+
         let imgElement = document.createElement('img');
-        imgElement.src = './img/gallery/' + imageNumber + '.jpg';
+        imgElement.src = './img/gallery/' + imageNumber + '.jpeg';
+        imgElement.className = "example-image";
 
         divElement.appendChild(imgElement);
 
