@@ -7,4 +7,4 @@
 * 주소 : 광주광역시 서구 상무자유로 27-1
 
 ### Wedding Invitation
-![Main](./img/gallery/37.jpg)
+![Main](./img/gallery/19.jpeg)
