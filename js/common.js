@@ -57,7 +57,7 @@ window.basic = {
         "name": "JS웨딩컨벤션",
         "address": "광주광역시 서구 상무자유로 27-1",
         "x": "35.15353705",
-        "y": "127.3979372"
+        "y": "126.83667438"
     },
     "link": "https://kindsunny.github.io/",
     "kakao": {
