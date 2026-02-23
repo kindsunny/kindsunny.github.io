@@ -63,7 +63,7 @@ window.basic = {
     "kakao": {
         "description": "2026.05.23. 토요일 오후 3:00\n광주 JS웨딩컨벤션 단독홀",
         "button": "모바일 청첩장 보기",
-        "img": "https://github.com/kindsunny/kindsunny.github.io/blob/main/img/gallery1/001.jpg?raw=true"
+        "img": "https://github.com/kindsunny/kindsunny.github.io/blob/main/img/gallery1/7.jpg?raw=true"
     },
     "info": {
         "description":"2026.05.23.(토) 오후 3:00 JS웨딩컨벤션 단독홀",
