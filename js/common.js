@@ -63,7 +63,7 @@ window.basic = {
     "kakao": {
         "description": "2026.05.23. 토요일 오후 3:00\n광주 JS웨딩컨벤션 단독홀",
         "button": "모바일 청첩장 보기",
-        "img": "https://github.com/kindsunny/kindsunny.github.io/blob/main/img/gallery/8.jpeg?raw=true"
+        "img": "https://github.com/kindsunny/kindsunny.github.io/blob/main/img/gallery1/001.jpg?raw=true"
     },
     "info": {
         "description":"2026.05.23.(토) 오후 3:00 JS웨딩컨벤션 단독홀",
@@ -76,7 +76,7 @@ window.basic = {
 }
 let scrollTop;
 const holidays = [5,25];
-const numOfImages = 25;
+const numOfImages = 19;
 const basicNumbers = 9;
 const excludeNumbers = [];
 const excludeNumbers2 = [];
@@ -459,12 +459,12 @@ function setGallery(id){
             divElement.className = 'grid-item example-image-link hidden-photo visually-hidden';
         }
 
-        divElement.setAttribute('href', './img/gallery/' + imageNumber + '.jpeg');
+        divElement.setAttribute('href', './img/gallery1/' + imageNumber + '.jpg');
         divElement.setAttribute('data-lightbox', 'example-set');
         divElement.setAttribute('data-title', '');
 
         let imgElement = document.createElement('img');
-        imgElement.src = './img/gallery/' + imageNumber + '.jpeg';
+        imgElement.src = './img/gallery1/' + imageNumber + '.jpg';
         imgElement.className = "example-image";
 
         divElement.appendChild(imgElement);
