@@ -158,7 +158,7 @@ a, a:hover, a:active, a:focus {
     background-image: url(../img/gallery1/004.jpg);
     background-size: cover;
     background-position: top;
-    background-position-y: -40px;
+    background-position-y: 0px;
     height: 450px;
 }
 .sub-title{
