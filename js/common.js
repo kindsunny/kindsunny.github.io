@@ -5,19 +5,19 @@ window.basic = {
         "first_name": "병선",
         "phone": "01000000000",
         "bank": "카카오뱅크",
-        "account": "카카오뱅크 3333-17-2209693",
+        "account": "카카오뱅크 000",
         "parents": {
             "father": {
                 "name": "김용표",
                 "phone": "01000000000",
                 "bank": "농협",
-                "account": "농협 601104-52-154788"
+                "account": "농협 000"
             },
             "mother": {
                 "name": "이향희",
                 "phone": "01000000000",
                 "bank": "농협",
-                "account": "농협 601104-56-158848"
+                "account": "농협 000"
             }
         }
     },
@@ -26,19 +26,19 @@ window.basic = {
         "first_name": "다정",
         "phone": "01000000000",
         "bank": "우리",
-        "account": "우리 1002-434-605391",
+        "account": "우리 000",
         "parents": {
             "father": {
                 "name": "정영기",
                 "phone": "01000000000",
                 "bank": "우리",
-                "account": "우리 123-07-049003"
+                "account": "우리 000"
             },
             "mother": {
                 "name": "이애순",
                 "phone": "01000000000",
                 "bank": "우리",
-                "account": "우리 449-07-001762"
+                "account": "우리 000"
             }
         }
     },
